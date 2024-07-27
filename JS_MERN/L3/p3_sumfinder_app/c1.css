@@ -1,0 +1,14 @@
+		*
+		{
+			font-size:50px;
+			font-family:Calibri;
+		}
+		body{
+			background-color:lightgreen;
+		}
+		.btn{
+			background-color:red;
+			color:white;
+			border-radius:30px;
+			margin-right:50px;
+		}

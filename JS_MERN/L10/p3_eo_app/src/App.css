@@ -1,0 +1,23 @@
+*{
+font-size: 50px;
+}
+
+body{
+background-color:azure;
+}
+
+.nav{
+background-color:black;
+}
+
+.nav a{
+color:white;
+text-decoration:none;
+margin:10%;
+}
+
+h3{
+border-style:groove;
+width:50%;
+border-radius:30px;
+}

@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>Birthday Party App</title>
+	<style>
+		* {font-size:50px; font-family:Arial; background-color:azure}
+		.btn {border-radius:30px; width:30%}
+	</style>
+	<script>
+		let frds = ["abc","xyz"];
+		function addrem()
+		{
+			event.preventDefault();
+			let action = document.activeElement.value;
+			
+			if(action == "Add")
+			{
+				let name = prompt("Enter Friend Name to Add: ");
+				if(name == "")
+					alert("Please Enter Name!!");
+				else
+				{
+					frds.push(name);
+				}
+				show();
+			}
+			else if(action == "Remove")
+			{
+				let name = prompt("Enter Friend Name to Remove: ");
+				let i = frds.indexOf(name);
+				if(i == -1)
+				{
+					alert(name+" Not Found!!!");
+				}	
+				else
+				{
+					frds.splice(i,1);
+				}
+				show();
+			}
+		}
+		function show()
+		{
+			let ans = document.getElementById("ans");
+			ans.innerHTML = frds;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Birthday Party Application</h1>
+		<form onsubmit="addrem()">
+			<input type="submit" value="Add" class="btn"/>
+			<input type="submit" value="Remove" class="btn"/>
+		</form>
+		<h2 id="ans"/>
+		<script>
+			show();
+		</script>
+	</center>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Even Odd Finder App</title>
+	<style>
+		* {background-color:#6e0f09;font-size:50px;color:grey}
+		.btn {width:10%; border-radius:100px; }
+		.btn:hover {color:yellow; background-color:blue}
+	</style>
+	<script>
+		function compute()
+		{
+			event.preventDefault();
+			
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+			let action = document.activeElement.value;
+
+			if(num.value == "")
+			{
+				alert("Please Enter Number!!");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+			let n = parseInt(num.value);
+			if(action == "M1")
+			{
+				let res = ( n % 2 == 0 ) ? "Even1" : "Odd1";
+				ans.innerHTML = res;
+				return;
+			}
+			else if(action == "M2")
+			{
+				let res = "";
+				if(n % 2 == 0)
+				{
+					res = "Even2";
+				}
+				else
+				{
+					res = "Odd2";
+				}
+				ans.innerHTML = res;
+			}
+			else
+			{
+				let res="";
+				switch(n % 2)
+				{
+					case 0: 
+					res="Even3";
+					break;
+
+					case 1:
+					res="Odd3";
+					break;
+
+					case -1:
+					res="Odd3";
+					break;
+				}
+				ans.innerHTML = res;
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Even Odd Finder App</h1>
+		<form onsubmit="compute()">
+			<input type="number" placeholder="Enter Number" step="any" id="num"/>
+			<br/><br/>
+			<input type="submit" value="M1" class="btn"/>
+			<input type="submit" value="M2" class="btn"/>
+			<input type="submit" value="M3" class="btn"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

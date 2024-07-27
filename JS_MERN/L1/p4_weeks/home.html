@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>WeekEnds / WeekDays</title>
+	<style>
+		body {background-color:skyblue}
+	</style>
+</head>
+<body>
+	<script>
+		function showmsg()
+		{
+			let d = new Date();
+			let day = d.getDay();
+			let msg = "";
+			if(day <= 5)
+			{
+				msg = "Week Day!!";
+			}
+			else
+			{
+				msg = "Week End!!!";
+			}
+			alert(msg);
+		}
+	</script>
+	<center>
+	<form onsubmit="showmsg()">
+		<input type="submit"  style="color:white; background-color:black; font-size:50px; " value="Weekday Or Weekend"/>
+	</form>
+	</center>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Even Odd Finder App</title>
+		<style>
+			* {font-size:50px}
+			body{background-color:azure}
+			.nav {background-color:black;width:60%;}
+			.nav a{color:white;text-decoration:none;margin:15%}
+			h2{border:solid; border-radius:20px;width:45%}
+		</style>
+	</head>
+	<body>
+		<center>
+			<div class="nav">
+				<a href="index.html">Home</a>
+				<a href="aboutus.html">About Us</a>
+			</div>
+			<h1>Result Page</h1>
+			<h2 id="ans"/>
+			<script>
+				let res = localStorage.getItem("res");
+				let ans = document.getElementById("ans");
+				if(res == null)
+				{
+					ans.innerHTML="Acting Smart???";
+				}
+				else
+				{
+					let msg = "Square is "+res;
+					ans.innerHTML = msg;
+				}
+			</script>
+		</center>
+	</body>
+</html>

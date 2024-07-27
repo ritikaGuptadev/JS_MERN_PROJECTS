@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Pallindrome Checker</title>
+	<style>
+		*{background-color:skyblue; font-size:50px}
+	</style>
+	<script>
+		function show()
+		{
+			event.preventDefault();
+			let t1 = document.getElementById("t1");
+			
+			let ans = document.getElementById("ans");
+			let msg = "";
+			let a1 = t1.value.split("").join("");
+			let rev = t1.value.split("").reverse().join("");
+			if(a1 ==  rev )		//a1.value == rev this is another method
+			{
+				msg = "Pallindrome";
+			}
+			else
+			{
+				msg = "Not a Pallindrome";
+			}
+			let res = msg;
+			ans.innerHTML = msg;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<form onsubmit="show()">
+			<h1>Pallindrome Checker</h1>
+			<input type="text" placeholder="enter first string"  id="t1"/>
+			
+			<input type="submit" value="check"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

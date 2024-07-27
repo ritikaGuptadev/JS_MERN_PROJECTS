@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Favourite Food App</title>
+	<style>
+		*{font-size:50px}
+		body{background-image: url('img1.jpg');;color:white}
+		.btn{border-radius:30px;width:20%}
+		.btn:hover{background-color:black;color:white}
+		input[type="radio"]
+		{
+			border:1px;
+			width: 5%;
+			height: 0.5em;
+		}
+	</style>
+	<script>
+		let check = () =>
+		{
+			event.preventDefault();
+			let name = document.getElementById("name");
+			let ans = document.getElementById("ans");
+
+			let ni = document.getElementById("ni");
+			let si = document.getElementById("si");
+			let con = document.getElementById("con");
+			let food = "";
+			if(ni.checked)	food="North Indian";
+			else if(si.checked) 	food="South Indian";
+			else if(con.checked) 	food="Continental"
+			
+			let res = "Name: "+name.value+ " " +"Food: "+food;
+			ans.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<form onsubmit="check()">
+			<h1>Favourite Food App</h1>
+			<input type="text" placeholder="enter username"  id="name" required/>
+			<br/><br/>
+			<input type="radio" name="f"  id="ni" checked="true"/>North Indian
+			<input type="radio" name="f"  id="si"/>South Indian
+			<input type="radio" name="f"  id="con"/>Continental
+			<br/><br/>
+			<input type="submit" value="Check" class="btn"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Currency Converter App</title>
+	<style>
+	*{font-size:50px}
+	body{background-color:azure}
+	h2{border-style:ridge;width:40%}
+	</style>
+	<script>
+		function getmsg()
+		{
+			event.preventDefault();
+			let dollar = document.getElementById("dollar");
+			let ans = document.getElementById("ans");
+			
+			let url = "https://api.exchangerate-api.com/v4/latest/USD";
+
+			fetch(url)
+			.then(res => res.json())
+			.then(data => {
+				let d = parseFloat(dollar.value);
+				let r = data.rates.INR;
+				let rupees = d*r;
+				let msg="&#8377 "+rupees.toFixed(2);
+				ans.innerHTML = msg;
+			})
+			.catch("issue: "+err);
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Live Currency Converter App</h1>
+		<form onsubmit="getmsg()">
+			<input type="number" step=".01" placeholder="enter amt in $" id="dollar" required/>
+			<br/><br/>
+			<input type="submit" value="Get Msg"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

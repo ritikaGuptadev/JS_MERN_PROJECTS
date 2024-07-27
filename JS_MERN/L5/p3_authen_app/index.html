@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Authentication Checker</title>
+	<style>
+		*{background-color:skyblue; font-size:30px}
+		.btn{border-radius:30px;width:20%}
+		.btn:hover{background-color:black;color:white}
+	</style>
+	<script>
+		let check = () =>
+		{
+			event.preventDefault();
+			let t1 = document.getElementById("t1");
+			let t2 = document.getElementById("t2");
+			let msg="";
+			if((t1.value == "kamal") && (t2.value=="classes"))
+			{
+				msg="Success";
+			}
+			else
+			{
+				msg="Fail";
+			}
+			let res = msg;
+			ans.innerHTML = msg;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<form onsubmit="check()">
+			<h1>Authentication Checker</h1>
+			<input type="text" placeholder="enter username"  id="t1" required/>
+			<br/><br/>
+			<input type="password" placeholder="enter password" id="t2" required/>
+			<br/><br/>
+			<input type="submit" value="check" class="btn"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

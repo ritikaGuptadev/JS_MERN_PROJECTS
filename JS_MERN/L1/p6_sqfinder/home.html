@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Square Finder</title>
+		<style>
+			body {background-color: skyblue}
+		</style>
+	</head>
+	<body>
+		<script>
+			function showmsg()
+			{
+				let num = document.getElementById("myid").value;
+				if(num == "")
+				{
+					alert("Please Enter a Number!!!")
+				}
+				else
+				{
+					let no = parseFloat(num);
+					let res = no*no;
+					alert("Square is " +res.toFixed(2));
+				}
+			}
+		</script>
+		<center>
+		<form onsubmit="showmsg()">
+			<input type="textfield" id="myid" placeholder="Enter a Number" style="color: white; background-color: black; font-size:50px" />
+			<br><br>
+			<input type="submit" value="Square Finder" style="color: white; background-color: black; font-size:50px"/>
+		</form>
+		</center>
+	</body>
+</html>

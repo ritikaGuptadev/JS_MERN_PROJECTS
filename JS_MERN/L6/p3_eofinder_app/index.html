@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Even Odd Finder App</title>
+		<style>
+			* {font-size:50px}
+			body{background-color:azure}
+			.nav {background-color:black;width:60%;}
+			.nav a{color:white;text-decoration:none;margin:15%}
+		</style>
+		<script>
+				function eofinder()
+				{
+					event.preventDefault();
+					let num = document.getElementById("num");
+					let n=parseInt(num.value);
+					let msg="";
+					if(n % 2 == 0)
+					{
+						msg="Even";
+					}
+					else
+					{
+						msg="Odd";
+					}
+					ans.innerHTML = msg;
+				}
+		</script>
+	</head>
+	<body>
+		<center>
+			<div class="nav">
+				<a href="home.html">Home</a>
+				<a href="aboutus.html">About Us</a>
+			</div>
+			<h1>Even Odd App</h1>
+			<form onsubmit="eofinder()">
+			<input type="number" placeholder="enter integer" id="num" required/>
+			<br/><br/>
+			<input type="submit" value="Find E/O"/>
+			</form>
+			<h2 id="ans"/>
+
+		</center>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Color Timer App</title>
+	<script>
+		function change()
+		{
+			let colors = ["red","lavender","green","blue","pink","orange","brown","yellow"];
+			let r = parseInt(Math.random() * colors.length);
+			document.body.style.backgroundColor = colors[r];
+		}
+	</script>
+</head>
+<body>
+	<center>
+	<h1>Color Change Timer App</h1>
+	</center>
+	<script>
+		change();
+		setInterval(change, 5000);
+	</script>
+</body>
+</html>

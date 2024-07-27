@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Motivational Msg App</title>
+	<style>
+		*{background-color:lavender; font-size:50px}
+	</style>
+	<script>
+		function showmsg()
+		{
+			let msg = ["let live","be warrior not worrier","go deep","Just do it","Never Backdown Naver Giveup"];
+			let r = parseInt(Math.random() * msg.length);
+			let ans = document.getElementById("ans");
+			ans.innerHTML = msg[r];
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Motivational Msg App</h1>
+		<h2 id="ans"/>
+		<script>
+			showmsg();
+			setInterval(showmsg, 10000);
+		</script>
+	</center>
+</body>
+</html>

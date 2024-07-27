@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Motivational Msg App</title>
+	<style>
+		*{background-color:lavender; font-size:50px}
+	</style>
+	<script>
+		function showmsg()
+		{
+			event.preventDefault();
+			let msg = ["let live","abc","xyz"];
+			let r = parseInt(Math.random() * msg.length);
+			ans.innerHTML = msg[r];
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Motivational Msg App</h1>
+		<form onsubmit="showmsg()">
+			<input type="submit" value="Get Msg"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

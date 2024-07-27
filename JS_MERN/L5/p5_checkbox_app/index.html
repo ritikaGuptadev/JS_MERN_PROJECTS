@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Kamal's Pizza Hut</title>
+	<style>
+		* {font-size:50px; color:white}
+		body{background-image : url('img1.jpg')}
+		input[type="checkbox"]
+		{
+			border: 1px;
+			width: 5%;
+			height: 0.5em;
+		}
+	</style>
+	<script>
+		let check = function()
+		{
+		event.preventDefault();
+		let name = document.getElementById("name");
+		let ans = document.getElementById("ans");
+		
+		let corn = document.getElementById("corn");
+		let capsicum = document.getElementById("capsicum");
+		let cheese = document.getElementById("cheese");
+		let topping = "";
+
+		if(corn.checked)		
+			topping = topping + " Corn ";
+		if(capsicum.checked)	
+			topping = topping + " Capsicum ";
+		if(cheese.checked)	
+			topping = topping + " Cheese ";
+
+		let res = "Name: "+name.value+" Toppings: "+topping;
+		ans.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Ritika's Pizza Hut</h1>
+		<form onsubmit="check()">
+			<input type="text" placeholder="Enter Your Name" required id="name"/>
+			<br/><br/>
+			<input type="checkbox" id="corn" checked="true"/>Corn
+			<input type="checkbox" id="capsicum"/>Capsicum
+			<input type="checkbox"  id="cheese"/>Cheese
+			<br/><br/>
+			<input type="submit" value="Order" style="color:black"/>	
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

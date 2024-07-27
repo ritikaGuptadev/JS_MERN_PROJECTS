@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Calci App</title>
+	<style>
+		* {font-size:50px; background-color:azure}
+		.btn{border-radius: 20px; width:20%}
+		.btn:hover {background-color:yellow}
+	</style>
+	<script>
+		function compute()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+			let action = document.activeElement.value;
+			
+			if(num.value == "")
+				{
+					alert("Please Enter Number!!");
+					ans.innerHTML="";
+					num.focus();
+					return;
+				}
+			if(action == "Square")
+			{
+				let n = parseFloat(num.value);
+				let res = n ** 2;
+				let msg = "Square = "+res.toFixed(2);
+				ans.innerHTML = msg;
+			}
+			else if(action == "Cube")
+			{
+				let n = parseFloat(num.value);
+				let res = n ** 3;
+				let msg = "Cube = "+res.toFixed(2);
+				ans.innerHTML = msg;	
+			}
+			else
+			{
+				let n = parseFloat(num.value);
+				if(n < 0)
+				{
+					alert("Negative Number Not Allowed!!");
+					ans.innerHTML="";
+					num.focus();
+					return;
+				}
+				let res = n ** 0.5;
+				let msg = "Square Root = "+res.toFixed(2);
+				ans.innerHTML = msg;
+			}
+		}
+	</script>
+</head>
+<body>
+	<center>
+	<h1>Calci App</h1>
+	<form onsubmit="compute()">
+		<input type="number" placeholder="Enter Number"  step="any" id="num"/>
+		<br/><br/>
+		<input type="submit" value="Square" class="btn"/>
+		<input type="submit" value="Cube" class="btn"/>
+		<input type="submit" value="Sqrt" class="btn"/>
+	</form>
+	<h2 id="ans"></h2>
+	</center>
+</body>
+</html>

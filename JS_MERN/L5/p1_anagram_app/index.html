@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Anagram Checker</title>
+	<style>
+		*{background-color:skyblue; font-size:50px}
+	</style>
+	<script>
+		function show()
+		{
+			event.preventDefault();
+			let t1 = document.getElementById("t1");
+			let t2 = document.getElementById("t2");
+			let ans = document.getElementById("ans");
+			let msg = "";
+			let a1 = t1.value.split("").sort().join("");
+			let a2 = t2.value.split("").sort().join("");
+			if(a1 == a2 )
+			{
+				msg = "Anagram";
+			}
+			else
+			{
+				msg = "Not a Anagram";
+			}
+			let res = msg;
+			ans.innerHTML = msg;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<form onsubmit="show()">
+			<h1>Anagram Checker</h1>
+			<input type="text" placeholder="enter first string"  id="t1"/>
+			
+			<input type="text" placeholder="enter second string"  id="t2"/>
+			<input type="submit" value="check"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

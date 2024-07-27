@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Currency Converter App</title>
+		<style>
+			* {font-size:50px}
+			body{background-color:skyblue}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h1>Currency Converter App</h1>
+			<form>
+				$<input type="text" placeholder="amt in $" step="any" id="dol" />
+				<br/><br/>
+				₹<input type="text" placeholder="amt in ₹"  step="any" id="rs"/>
+			</form>
+			<script>
+				let dol = document.getElementById("dol");
+				let rs = document.getElementById("rs");
+
+				dol.addEventListener("input",function(){
+					let d = parseFloat(dol.value);
+					let r = d * 87;
+					rs.value = r.toFixed(2);
+				});
+				
+				rs.addEventListener("input",function(){
+					let r = parseFloat(rs.value);
+					let d = r / 87;
+					dol.value = d.toFixed(2);
+				});
+				
+			</script>	
+		</center>
+	</body>
+</html>

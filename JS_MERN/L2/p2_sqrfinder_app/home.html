@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>SquareRoot Finder App</title>
+	<style>
+		* {font-size:50px; background-color:skyblue}
+	</style>
+	<script>
+		function compute()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+
+			if(num.value == "")
+			{
+				alert("Please Enter Number!!");
+				ans.innerHTML="";
+				num.focus();
+				return;
+			}
+			let n = parseFloat(num.value);
+			if(n < 0)
+			{
+				alert("Negative Number Not Allowed!!");
+				ans.innerHTML="";
+				num.focus();
+				return;
+			}
+			let res = n ** 0.5;
+			let msg = "Square Root = "+res;
+			ans.innerHTML = msg;
+		}
+	</script>
+</head>
+<body>
+	<center>
+	<h1>Square Root Finder App</h1>
+	<form onsubmit="compute()">
+		<input type="number" placeholder="Enter Number"  step="any" id="num"/>
+		<br/><br/>
+		<input type="submit" value="Find Square Root"/>
+	</form>
+	<h2 id="ans"></h2>
+	</center>
+</body>
+</html>

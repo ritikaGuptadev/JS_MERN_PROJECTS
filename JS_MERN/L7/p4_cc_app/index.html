@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Currency Converter App</title>
+	<style>
+	*{font-size:50px}
+	body{background-color:azure}
+	h2{border-style:ridge;width:40%}
+	</style>
+</head>
+<body>
+	<center>
+		<h1>New Live Currency Converter App</h1>
+		<form onsubmit="getmsg()">
+			$<input type="number" step=".01" placeholder="enter amt in $" id="dollar" required/>
+			<br/><br/>
+			&#8377<input type="number" step=".01" placeholder="enter amt in "&38377 id="rupee" required/>
+		</form>
+		<h2 id="ans"/>
+		<script>
+			let dollar = document.getElementById("dollar");
+			let rupee = document.getElementById("rupee");
+			let url="https://api.exchangerate-api.com/v4/latest/USD";
+
+			fetch(url)
+			.then(res => res.json())
+			.then(data =>{
+				dollar.addEventListener("input",function(){
+				let d = parseFloat(dollar.value);
+				let r = data.rates.INR;
+				let rupees = d * r;
+				rupee.value= rupees.toFixed(2);
+			});
+				rupee.addEventListener("input",function(){
+				let r = parseFloat(rupee.value);
+				let d = data.rates.INR;
+				let dollars = r / d;
+				dollar.value = dollars.toFixed(2);
+			});
+			})
+			.catch(err=>alert("Issue "+err));
+		</script>
+	</center>
+</body>
+</html>

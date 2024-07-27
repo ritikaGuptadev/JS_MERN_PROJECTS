@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Sort Name App</title>
+	<style>
+		* {background-color:azure; font-size:50px}
+	</style>
+	<script>
+		function show()
+		{
+			event.preventDefault();
+			let name = document.getElementById("name");
+			let ans = document.getElementById("ans");
+			if(name.value == "")
+			{
+				alert("Please Enter Name!!!");
+			}
+			let res = name.value.split("").sort().join("");
+			ans.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Sort Name App</h1>
+		<form onsubmit="show()">
+			<input type="text" placeholder="Enter Your Name" id="name"/>
+			<br/><br/>
+			<input type="submit"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>

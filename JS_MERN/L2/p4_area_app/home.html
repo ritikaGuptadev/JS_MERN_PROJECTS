@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Area And Circumference App</title>
+		<style>
+			* {background-color:#22366b; font-size:50px; color:white}
+		</style>
+		<script>
+			function showmsg()
+			{
+				event.preventDefault();
+
+				let num = document.getElementById("num");
+				let ans = document.getElementById("ans");
+
+				if(num.value == "")
+				{
+					alert("Please Enter Number!!");
+					ans.innerHTML="";
+					num.focus();
+					return;
+				}
+				let n = parseFloat(num.value);
+				if(n < 0)
+				{
+					alert("Negative Number Not Allowed!!");
+					ans.innerHTML="";
+					num.focus();
+					return;
+				}
+				let area = 3.14*n*n;
+				let circum = 2*3.14*n;
+				let res = "Area = "+area.toFixed(2)+ "    "+"       Circum = "+circum.toFixed(2);
+				ans.innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>Area Circumference Finder</h1>
+			<form onsubmit="showmsg()">
+				<input type="number"  placeholder="Enter Radius" step="any" id="num"/>
+				<br/><br/>
+				<input type="submit" value="Find Area N Circumference"/>
+			</form>
+			<h2 id="ans"/>
+		</center>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>SquareFinder App</title>
+		<style>
+			* {font-size:50px}
+			body{background-color:azure}
+			.nav {background-color:black;width:60%;}
+			.nav a{color:white;text-decoration:none;margin:15%}
+		</style>
+		<script>
+				function squarefinder()
+				{
+					event.preventDefault();
+					let num = document.getElementById("num");
+					let n=parseInt(num.value);
+					let sq = n*n;
+					let r = sq.toFixed(2);
+					localStorage.setItem("res",r);
+					window.location.href="result.html";
+				}
+		</script>
+	</head>
+	<body>
+		<center>
+			<div class="nav">
+				<a href="home.html">Home</a>
+				<a href="aboutus.html">About Us</a>
+			</div>
+			<script>
+				localStorage.clear();
+			</script>
+			<h1>SquareFinder App</h1>
+			<form onsubmit="squarefinder()">
+			<input type="number" placeholder="enter number" id="num" required/>
+			<br/><br/>
+			<input type="submit" value="Find Square"/>
+			</form>
+			<h2 id="ans"/>
+
+		</center>
+	</body>
+</html>

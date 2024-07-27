@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Motivational Msg App</title>
+	<style>
+	*{font-size:50px}
+	body{background-color:azure}
+	h2{border-style:ridge;width:45%;border-radius:30px}
+	</style>
+	<script>
+		function getmsg()
+		{
+			let ans = document.getElementById("ans");
+			let aut = document.getElementById("aut");
+			let url = "https://api.quotable.io/random";
+
+			fetch(url)
+			.then(res => res.json())
+			.then(data => {
+				ans.innerHTML = data.content;
+				aut.innerHTML = data.author;
+			})
+			.catch(err => alert("issue: "+err));
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Motivational Msg App</h1>
+		
+		<h2 id="ans"/>
+		<h2 id="aut"/>
+
+		<script>
+			getmsg();
+			setInterval(getmsg, 10000);
+		</script>
+	</center>
+</body>
+</html>

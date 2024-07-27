@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Second Practical MERN</title>
+	</head>
+	<body>
+		<h1>Welcome To JavaScript</h1>
+		<h2 id="ans"></h2>
+		<script>
+		let d = new Date();
+		let ans = document.getElementById("ans");
+		let msg = "";
+		let hr = d.getHours();
+		if(hr < 12)
+			msg="Good Morning";
+		else if(hr < 16)
+			msg = "Good Afternoon";
+		else
+			msg = "Good Evening";
+		ans.innerHTML = msg;
+		</script>
+	</body>
+</html>

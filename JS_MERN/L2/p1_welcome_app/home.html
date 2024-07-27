@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Welcome App</title>
+	<style>
+		* {background-color:grey; font-size:50px}
+	</style>
+	<script>
+	  function showmsg()
+	  {
+		event.preventDefault();
+		let name = document.getElementById("name");
+		let ans = document.getElementById("ans");
+		if(name.value == "")
+		{
+			alert("Please enter your name!!");
+			ans.innerHTML = "";
+			name.focus();
+			return;
+		}
+		
+			let d = new Date();
+			let hr = d.getHours();
+			let msg = "";
+			if(hr < 12)
+				msg = "Good Morning";
+			else if(hr < 16)
+				msg = "Good Afternoon";
+			else
+				msg = "Good Evening";
+			
+			let res = msg + " "+name.value;
+			ans.innerHTML = res;
+	}
+	
+	</script>
+</head>
+<body>
+	<center>
+	<h1>Welcome Again App</h1>
+	<form onsubmit="showmsg()">
+		<input type="text" placeholder="Enter Your Name" id="name"/>
+		<br><br>
+		<input type="submit"/>
+	</form>
+	<h2 id="ans"/>
+	</center>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Name Validation App</title>
+	<style>
+		* {background-color:azure; font-size:50px}
+	</style>
+	<script>
+		function showmsg()
+		{
+			event.preventDefault();
+			let name=document.getElementById("name");
+			let ans = document.getElementById("ans");
+			
+			if(name.value == "")
+			{
+				alert("Please Enter Name!!!");
+				ans.innerHTML = "";
+				name.focus();
+				return;
+			}
+			else if(! name.value.match(/^[A-Za-z ]+$/))
+			{
+				alert("Only alphabets are allowed!!!");
+				name.value = "";
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+			else if(name.value.length < 2)
+			{
+				alert("At least two characters are needed!!!");
+				name.value = "";
+				ans.innerHTML="";
+				name.focus();
+				return;
+			}
+			else if(name.value.trim() == "")
+			{
+				alert("Only Spaces Are Not Allowed!!!");
+				name.focus();
+				return;
+			} 
+			else
+			{
+			let d = new Date();
+			let hr = d.getHours();
+			let msg="";
+			if(hr < 12)
+			{
+				msg = "Good Morning";
+			}
+			else if(hr < 16)
+			{
+				msg = "Good Afternoon";
+			}
+			else
+			{
+				msg = "Good Evening";
+			}
+			let res = msg+" "+name.value;
+			ans.innerHTML = res;
+			}
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Name Validation App</h1>
+		<form onsubmit="showmsg()">
+			<input type="text" placeholder="Enter Your Name" id="name"/>
+			<br/><br/>
+			<input type="submit"/>
+		</form>
+		<h2 id="ans"/>
+	</center>
+</body>
+</html>
